@@ -1,2 +1,2 @@
-# projekty
+# Projekty
 Moje zrealizowane projekty
