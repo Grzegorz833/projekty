@@ -23,6 +23,7 @@ Zbiór jest niezbalansowany – obiekty potencjalnie niebezpieczne stanowią oko
 
 # Etapy projektu
 1. Wczytanie i przegląd danych
+
 Na początku wykonano:
 - sprawdzenie wymiarów zbioru,
 - analizę typów danych,
