@@ -22,7 +22,7 @@ Zmienną docelową jest kolumna:
 Zbiór jest niezbalansowany – obiekty potencjalnie niebezpieczne stanowią około 10% wszystkich obserwacji.
 
 # Etapy projektu
-1. Wczytanie i przegląd danych
+1. Wczytanie i przegląd danych.
 
 Na początku wykonano:
 - sprawdzenie wymiarów zbioru,
@@ -32,7 +32,8 @@ Na początku wykonano:
 - sprawdzenie duplikatów,
 - analizę podstawowych statystyk opisowych.
 
-2. Czyszczenie danych
+2. Czyszczenie danych.
+
 W ramach przygotowania danych:
 - usunięto duplikaty,
 - sprawdzono wartości brakujące,
@@ -44,7 +45,8 @@ W ramach przygotowania danych:
 - usunięto kolumnę identyfikatora id,
 - usunięto kolumny tekstowe oraz kolumny zawierające tylko jedną unikalną wartość.
 
-3. Eksploracyjna analiza danych
+3. Eksploracyjna analiza danych.
+
 W ramach EDA wykonano:
 - statystyki opisowe,
 - macierz korelacji zmiennych liczbowych,
@@ -69,7 +71,8 @@ Dla modelu regresji logistycznej zastosowano standaryzację zmiennych przy użyc
 *StandardScaler*
 
 ## Zastosowane modele
-1. Logistic Regression
+1. Logistic Regression.
+
 Regresja logistyczna została wykorzystana jako model bazowy.
 
 Ze względu na niezbalansowanie klas zastosowano parametr:
@@ -77,7 +80,8 @@ Ze względu na niezbalansowanie klas zastosowano parametr:
 
 Model był trenowany na zestandaryzowanych danych.
 
-2. XGBoost
+2. XGBoost.
+
 Drugim wykorzystanym modelem był XGBoost, który dobrze radzi sobie z:
 - zależnościami nieliniowymi,
 - interakcjami pomiędzy cechami,
