@@ -22,8 +22,7 @@ Zmienną docelową jest kolumna:
 Zbiór jest niezbalansowany – obiekty potencjalnie niebezpieczne stanowią około 10% wszystkich obserwacji.
 
 # Etapy projektu
-1. Wczytanie i przegląd danych.
-
+1. Wczytanie i przegląd danych.  
 Na początku wykonano:
 - sprawdzenie wymiarów zbioru,
 - analizę typów danych,
@@ -32,8 +31,7 @@ Na początku wykonano:
 - sprawdzenie duplikatów,
 - analizę podstawowych statystyk opisowych.
 
-2. Czyszczenie danych.
-
+2. Czyszczenie danych.  
 W ramach przygotowania danych:
 - usunięto duplikaty,
 - sprawdzono wartości brakujące,
@@ -45,8 +43,7 @@ W ramach przygotowania danych:
 - usunięto kolumnę identyfikatora id,
 - usunięto kolumny tekstowe oraz kolumny zawierające tylko jedną unikalną wartość.
 
-3. Eksploracyjna analiza danych.
-
+3. Eksploracyjna analiza danych.  
 W ramach EDA wykonano:
 - statystyki opisowe,
 - macierz korelacji zmiennych liczbowych,
@@ -56,8 +53,7 @@ W ramach EDA wykonano:
 - analizę rozkładu zmiennej docelowej.
 
 Dla zmiennych posiadających silnie skośne rozkłady utworzono również wersje po transformacji logarytmicznej:
-*log10(x + 1)*
-
+*log10(x + 1)*  
 Transformację zastosowano między innymi do średnicy, prędkości względnej i odległości obiektu.
 
 ## Przygotowanie danych do modelowania
@@ -65,8 +61,7 @@ Dane zostały podzielone na:
 - 80% – zbiór treningowy,
 - 20% – zbiór testowy.
 
-Podział wykonano z wykorzystaniem stratyfikacji, dzięki czemu zachowano podobne proporcje klas w obu zbiorach.
-
+Podział wykonano z wykorzystaniem stratyfikacji, dzięki czemu zachowano podobne proporcje klas w obu zbiorach.  
 Dla modelu regresji logistycznej zastosowano standaryzację zmiennych przy użyciu:
 *StandardScaler*
 
@@ -105,8 +100,7 @@ Testowane parametry obejmowały między innymi:
 - reg_lambda.
 
 Do walidacji zastosowano trzykrotną walidację krzyżową:
-*StratifiedKFold*
-
+*StratifiedKFold*  
 Jako główną metrykę optymalizacji przyjęto:
 *ROC AUC*
 
