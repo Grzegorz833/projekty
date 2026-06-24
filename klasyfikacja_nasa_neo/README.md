@@ -73,11 +73,9 @@ Dla modelu regresji logistycznej zastosowano standaryzację zmiennych przy użyc
 ## Zastosowane modele
 1. Logistic Regression.
 
-Regresja logistyczna została wykorzystana jako model bazowy.
-
+Regresja logistyczna została wykorzystana jako model bazowy.  
 Ze względu na niezbalansowanie klas zastosowano parametr:
-*class_weight='balanced'*
-
+*class_weight='balanced'*  
 Model był trenowany na zestandaryzowanych danych.
 
 2. XGBoost.
