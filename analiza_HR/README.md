@@ -6,7 +6,7 @@ Celem było sprawdzenie struktury zbioru, przygotowanie danych oraz przeanalizow
 Wyniki analizy, tabele oraz wnioski znajdują się bezpośrednio w projekcie.
 
 ## Wykonane etapy
-Podczas pracy z datasetem, wykonano poszczególne etapy:
+Podczas pracy z datasetem, wykonano poszczególne etapy:  
 - wczytano zbiór danych z pliku CSV,
 - sprawdzono liczbę wierszy i kolumn,
 - wyświetlono podstawowe informacje o danych i typach kolumn,
@@ -23,7 +23,7 @@ Podczas pracy z datasetem, wykonano poszczególne etapy:
 - zapisano oczyszczony zbiór danych do nowego pliku CSV.
 
 ## Przykładowe analizy
-W projekcie przeanalizowano:
+W projekcie przeanalizowano:  
 - liczbę pracowników, którzy zostali i odeszli,
 - średni wiek i wynagrodzenie,
 - staż pracy w firmie,
@@ -38,7 +38,7 @@ W projekcie przeanalizowano:
 - korelacje z odejściami pracowników.
 
 ## Wykresy
-W projekcie przygotowano między innymi:
+W projekcie przygotowano między innymi:  
 - macierz korelacji cech dla flagi Attrition,
 - wykres udziału kobiet i mężczyzn,
 - wykres zależności dochodu od stażu pracy,
@@ -51,13 +51,21 @@ W projekcie przygotowano między innymi:
 - porównanie wynagrodzeń i podróży służbowych.
 
 ## Wykorzystane biblioteki
-- pandas – wczytywanie, przetwarzanie i analiza danych,
-- numpy – operacje na danych i tworzenie dodatkowych kolumn,
-- matplotlib – tworzenie wykresów,
-- seaborn – tworzenie wykresów statystycznych i map korelacji.
+- pandas,
+- numpy,
+- matplotlib,
+- seaborn.
+
+## Instalacja bibliotek
+Należy zainstalować wymagane biblioteki:  
+*pip install pandas numpy matplotlib seaborn*
 
 ## Uruchomienie projektu
-Należy zainstalować wymagane biblioteki:
-- pip install pandas numpy matplotlib seaborn
+Uruchomić Jupyter Notebook. Po otwarciu notatnika należy uruchamiać komórki kolejno od początku.
 
-Następnie uruchomić plik projektu w Jupyter Notebook albo w środowisku obsługującym język Python.
+## Pliki projektu
+analiza_HR/
+- HR_Analytics.csv
+- HR_Analytics.ipynb
+- HR_Analytics_cleaned.csv
+- README.md
