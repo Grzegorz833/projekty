@@ -6,7 +6,7 @@ Model został zbudowany przy użyciu bibliotek TensorFlow i Keras oraz wytrenowa
 
 Po zakończeniu treningu model jest zapisywany do pliku i może zostać wykorzystany do rozpoznawania cyfr narysowanych przez użytkownika, na przykład w programie Paint.
 
-# Co wykonano w projekcie
+## Co wykonano w projekcie
 W projekcie wykonano następujące kroki:  
 1\. Wczytano zbiór danych MNIST.
 
@@ -45,17 +45,17 @@ W projekcie wykonano następujące kroki:
 
 11\. Dodano możliwość rozpoznawania cyfry znajdującej się na obrazie utworzonym przez użytkownika.
 
-# Wykorzystane technologie
+## Wykorzystane technologie
 - tensorflow,
 - keras,
 - numpy,
 - pillow.
 
-# Instalacja bibliotek
+## Instalacja bibliotek
 Przed uruchomieniem projektu należy zainstalować wymagane biblioteki:  
 *python -m pip install tensorflow numpy pillow*
 
-# Uruchomienie projektu
+## Uruchomienie projektu
 1\. Uruchomić Jupyter Notebook. Po otwarciu notatnika należy uruchamiać komórki kolejno od początku.
 
 Po zakończeniu treningu w katalogu projektu powinien pojawić się plik:  
@@ -77,7 +77,7 @@ Aby sprawdzić działanie modelu:
    *img_digit.jpg*
 7. Umieścić zapisany obraz w tym samym katalogu co notebook lub skrypt projektu.
 
-# Ograniczenia projektu
+## Ograniczenia projektu
 WAŻNA WSKAZÓWKA: Model rozpoznaje tylko jedną cyfrę na jednym obrazie.  
 Nie rozpoznaje liczb wielocyfrowych, takich jak:  
 - 12
