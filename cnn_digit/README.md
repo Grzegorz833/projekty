@@ -68,10 +68,10 @@ Aby sprawdzić działanie modelu:
 2. Utwórzyć nowy obraz z białym tłem.
 3. Narysować jedną cyfrę od 0 do 9.
 4. Najlepiej użyć:
-- czarnego koloru,
-- grubszego pędzla,
-- dużej cyfry,
-- prostego, czytelnego kształtu.
+    - czarnego koloru,
+    - grubszego pędzla,
+    - dużej cyfry,
+    - prostego, czytelnego kształtu.
 5. Umieścić cyfrę możliwie blisko środka obrazu.
 6. Zapisać obraz w formacie JPG lub PNG, na przykład jako:  
    *img_digit.jpg*
