@@ -190,7 +190,7 @@ Instalacja wymaganych bibliotek:
 Uruchomić Jupyter Notebook. Po otwarciu notatnika należy uruchamiać komórki kolejno od początku.
 
 Nastepnie aby uruchomić aplikację w Streamlit, z pliku 'app.py' ,należy wykonać następujące kroki:
-- przejść w terminalu, do katalogu docelowego np.:
+- przejść w terminalu, do katalogu docelowego np.:  
   *cd klasyfikacja_spam*
 - zainstalować wymagane biblioteki:  
   *pip install -r requirements.txt*
