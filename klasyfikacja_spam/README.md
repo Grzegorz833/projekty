@@ -61,10 +61,7 @@ W projekcie utworzono między innymi następujące cechy:
 - text.
 
 Kolumna 'text' powstała przez połączenie tematu i treści wiadomości:  
-df['text'] = (  
-    df['subject'].fillna('') + ' ' +  
-    df['body_plain'].fillna('')  
-)
+*df['text'] = (df['subject'].fillna('') + ' ' + df['body_plain'].fillna(''))*
 
 Wartości SPF, DKIM i DMARC zostały przekształcone do formatu binarnego:  
 - 1 – test przeszedł poprawnie,
@@ -158,11 +155,7 @@ Model składa się z:
 - Logistic Regression.
 
 Tekst może otrzymać większą wagę za pomocą parametru:  
-transformer_weights={
-    'num': 1.0,
-    'cat': 1.0,
-    'txt': 5.0
-}
+*transformer_weights={'num': 1.0, 'cat': 1.0, 'txt': 5.0}*
 
 Finalny model został zapisany do pliku:  
 *spam_metadata_text_model.pkl*
@@ -203,7 +196,7 @@ Nastepnie aby uruchomić aplikację w Streamlit, z pliku 'app.py' ,należy wykon
   *pip install -r requirements.txt*
 - wpisać poniższą komendę uruchamiajacą Streamlit:  
   *streamlit run app.py*
-- powinna otworzyć się przeglądarka z localhostem i portem (port może się różnić):
+- powinna otworzyć się przeglądarka z localhostem i portem (port może się różnić):  
   *http://localhost:8501*
 
 ## Pliki projektu
