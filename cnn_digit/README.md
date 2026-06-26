@@ -83,3 +83,6 @@ Nie rozpoznaje liczb wielocyfrowych, takich jak:
 - 12
 - 123
 - 2026
+
+
+Dataset MNIST, jest udostępniany bezpośrednio przez Keras jako gotowy zestaw danych: https://keras.io/api/datasets/mnist/
