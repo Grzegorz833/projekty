@@ -16,44 +16,42 @@ Zbiór zawiera ponad 90 tyś. obserwacji oraz informacje dotyczące między inny
 - ciała, wokół którego porusza się obiekt,
 - klasyfikacji obiektu jako potencjalnie niebezpiecznego.
 
-Zmienną docelową jest kolumna:
+Zmienną docelową jest kolumna:  
 *hazardous*
 
 Zbiór jest niezbalansowany – obiekty potencjalnie niebezpieczne stanowią około 10% wszystkich obserwacji.
 
 # Etapy projektu
 1\. Wczytanie i przegląd danych.  
-Na początku wykonano:  
 - sprawdzenie wymiarów zbioru,
-- analizę typów danych,
+- analiza typów danych,
 - wyświetlenie przykładowych obserwacji,
 - sprawdzenie brakujących wartości,
 - sprawdzenie duplikatów,
-- analizę podstawowych statystyk opisowych.
+- analiza podstawowych statystyk opisowych.
 
 2\. Czyszczenie danych.  
-W ramach przygotowania danych:  
-- usunięto duplikaty,
-- sprawdzono wartości brakujące,
-- usunięto kolumny zawierające ponad 30% braków,
-- uzupełniono braki w kolumnach liczbowych medianą,
-- uzupełniono braki w kolumnach tekstowych wartością Unknown,
-- sprawdzono występowanie niepoprawnych wartości ujemnych,
-- uporządkowano nazwy kolumn,
-- usunięto kolumnę identyfikatora id,
-- usunięto kolumny tekstowe oraz kolumny zawierające tylko jedną unikalną wartość.
+- usuwanie duplikatów,
+- sprawdzenie wartości brakujące,
+- usunięcie kolumn zawierających ponad 30% braków,
+- uzupełnienie braków w kolumnach liczbowych medianą,
+- uzupełnienie braków w kolumnach tekstowych wartością 'Unknown',
+- sprawdzenie występowania niepoprawnych wartości ujemnych,
+- uporządkowanie nazw kolumn,
+- usunięcie kolumny id,
+- usunięcie kolumn tekstowych oraz kolumn zawierających tylko jedną unikalną wartość.
 
 3\. Eksploracyjna analiza danych.  
-W ramach EDA wykonano:  
 - statystyki opisowe,
 - macierz korelacji zmiennych liczbowych,
 - histogramy zmiennych liczbowych,
 - boxploty dla zmiennych liczbowych,
-- analizę wartości odstających,
-- analizę rozkładu zmiennej docelowej.
+- analiza wartości odstających,
+- analiza rozkładu zmiennej docelowej.
 
 Dla zmiennych posiadających silnie skośne rozkłady utworzono również wersje po transformacji logarytmicznej:  
 *log10(x + 1)*  
+
 Transformację zastosowano między innymi do średnicy, prędkości względnej i odległości obiektu.
 
 ## Przygotowanie danych do modelowania
@@ -68,39 +66,33 @@ Dla modelu regresji logistycznej zastosowano standaryzację zmiennych przy użyc
 ## Zastosowane modele
 1\. Logistic Regression.  
 Regresja logistyczna została wykorzystana jako model bazowy.  
+
 Ze względu na niezbalansowanie klas zastosowano parametr:  
 *class_weight='balanced'*  
+
 Model był trenowany na zestandaryzowanych danych.
 
 2\. XGBoost.  
-Drugim wykorzystanym modelem był XGBoost, który dobrze radzi sobie z:  
-- zależnościami nieliniowymi,
-- interakcjami pomiędzy cechami,
-- niezbalansowanymi klasami,
-- dużymi zbiorami danych.
+Drugim wykorzystanym modelem był XGBoost.
 
 Niezbalansowanie klas uwzględniono za pomocą parametru:  
 *scale_pos_weight*
+
+## Walidacja krzyżowa
+Dla modelu XGBoost wykonano walidację krzyżową z użyciem:  
+*StratifiedKFold*
+
+Celem walidacji było sprawdzenie stabilności modelu na różnych podziałach danych.
 
 ## Optymalizacja modelu
 Parametry modelu XGBoost zostały dobrane za pomocą:  
 *RandomizedSearchCV*
 
-Testowane parametry obejmowały między innymi:  
-- max_depth,
-- n_estimators,
-- learning_rate,
-- subsample,
-- colsample_bytree,
-- min_child_weight,
-- gamma,
-- reg_alpha,
-- reg_lambda.
-
-Do walidacji zastosowano trzykrotną walidację krzyżową:  
+Do walidacji w ramach RandomizedSearchCV zastosowano:  
 *StratifiedKFold*  
+
 Jako główną metrykę optymalizacji przyjęto:  
-*ROC AUC*
+*PR-AUC*
 
 ## Ocena modeli
 Modele zostały ocenione przy użyciu:  
@@ -108,12 +100,27 @@ Modele zostały ocenione przy użyciu:
 - precision,
 - recall,
 - F1-score,
-- ROC AUC,
+- ROC-AUC,
+- PR-AUC,
 - raportu klasyfikacji,
 - macierzy pomyłek,
-- krzywej ROC.
+- krzywej ROC,
+- krzywej PR.
 
-Ze względu na niezbalansowanie klas, sama dokładność nie jest wystarczającą metryką. Szczególnie istotne są 'recall' oraz 'ROC AUC', ponieważ pozwalają lepiej ocenić zdolność modelu do wykrywania potencjalnie niebezpiecznych obiektów.
+## Analiza progów klasyfikacji
+Dla modeli analizowano również różne progi klasyfikacji.
+
+Domyślny próg wynosi: 
+*0.5*
+
+Oznacza to, że model klasyfikuje obiekt jako 'hazardous' = 1, jeśli prawdopodobieństwo klasy pozytywnej jest większe lub równe 0.5.
+
+Sprawdzono również inne progi, między innymi:
+- 0.3,
+- 0.4,
+- 0.6,
+- 0.7,
+- 0.8.
 
 ## Wykorzystane technologie
 - pandas,
